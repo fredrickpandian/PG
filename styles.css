@@ -59,7 +59,7 @@ button:focus-visible {
 
 .brand img {
   width: 280px;
-  max-height: 86px;
+  max-height: 120px;
   object-fit: contain;
 }
 
