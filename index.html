@@ -3,239 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pandian Global</title>
+  <title>Pandian Global | Executive Technology & Systems Advisory</title>
+  <meta name="description" content="Pandian Global provides technology, ERP, AI, finance systems, nonprofit management, and executive advisory consulting." />
   <style>
-    :root {
-      --navy:#071640; --gold:#f6b52e; --text:#0a1638; --muted:#5e6a84;
-      --light:#f6f8fc; --shadow:0 24px 70px rgba(7,22,64,.18);
+    :root{
+      --navy:#071640;--navy2:#0c235c;--gold:#f6b52e;--blue:#1d6fff;--text:#0a1638;--muted:#5e6a84;--light:#f6f8fc;--white:#fff;--line:rgba(7,22,64,.10);--shadow:0 18px 55px rgba(7,22,64,.14);--radius:22px;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--text);line-height:1.6;background:white}
-    a{text-decoration:none;color:inherit}
-    .nav{position:sticky;top:0;z-index:20;height:86px;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(7,22,64,.08);display:flex;align-items:center;justify-content:space-between;padding:0 7vw}
-    .nav img{width:142px}
-    .nav-links{display:flex;gap:28px;align-items:center;font-size:14px;font-weight:700;color:var(--navy)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:10px;font-weight:800}
-    .btn-primary{background:var(--navy);color:white}
-    .btn-blue{background:linear-gradient(135deg,#0b3fa8,#102869);color:white}
-    .btn-ghost{color:white;border:1px solid rgba(255,255,255,.55)}
-    .hero{min-height:760px;color:white;background:linear-gradient(90deg,rgba(3,12,33,.98),rgba(4,18,48,.88) 35%,rgba(4,18,48,.25)),url('hero-bg.png') center right/cover no-repeat}
-    .hero-inner{max-width:1280px;margin:0 auto;padding:106px 7vw 160px;display:grid;grid-template-columns:minmax(300px,640px) 1fr;gap:40px;align-items:center}
-    .eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:14px;font-weight:900;margin-bottom:18px}
-    .hero h1{font-size:clamp(48px,6vw,86px);line-height:.98;margin:0 0 26px;letter-spacing:-.055em;font-weight:900}
-    .hero h1 span{color:var(--gold)}
-    .hero p{max-width:600px;font-size:20px;color:rgba(255,255,255,.88);margin:0 0 34px}
-    .hero-actions{display:flex;gap:18px;flex-wrap:wrap}
-    .hero-card{justify-self:end;align-self:end;width:min(370px,100%);margin-top:190px;padding:26px;border-radius:22px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(14px);box-shadow:0 22px 60px rgba(0,0,0,.25)}
-    .hero-card strong{display:block;font-size:28px;line-height:1.1;margin-bottom:8px}
-    .hero-card span{color:rgba(255,255,255,.82)}
-    .services-wrap{max-width:1180px;margin:-92px auto 0;padding:0 7vw;position:relative;z-index:4}
-    .services{display:grid;grid-template-columns:repeat(5,1fr);background:white;border-radius:24px;box-shadow:var(--shadow);overflow:hidden;border:1px solid rgba(7,22,64,.08)}
-    .service{padding:34px 22px;text-align:center;border-right:1px solid rgba(7,22,64,.1)}
-    .service:last-child{border-right:0}
-    .icon{width:58px;height:58px;margin:0 auto 14px;display:grid;place-items:center;border-radius:18px;background:linear-gradient(135deg,rgba(29,111,255,.12),rgba(246,181,46,.14));font-size:28px}
-    .service h3{margin:0 0 10px;color:var(--navy);font-size:18px;line-height:1.2}
-    .service p{margin:0;color:var(--muted);font-size:14px}
-    section{padding:96px 7vw}
-    .section-inner{max-width:1180px;margin:0 auto}
-    .split{display:grid;grid-template-columns:1fr 1.18fr;gap:62px;align-items:center}
-    .kicker{color:#16469b;font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
-    h2{font-size:clamp(34px,4vw,54px);line-height:1.05;color:var(--navy);margin:0 0 20px;letter-spacing:-.035em}
-    .lead{font-size:18px;color:var(--muted);margin:0 0 26px}
-    .check-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
-    .check-list li{display:flex;gap:12px;color:#1b2d56;font-weight:650}
-    .check-list li:before{content:'✓';flex:0 0 24px;height:24px;border-radius:50%;background:var(--navy);color:white;display:grid;place-items:center;font-size:13px}
-    .image-card{min-height:390px;border-radius:24px;background:url('city-bg.png') center/cover no-repeat;box-shadow:var(--shadow)}
-    .solutions{background:var(--light)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
-    .card{background:white;border-radius:22px;padding:32px;border:1px solid rgba(7,22,64,.08);box-shadow:0 16px 40px rgba(7,22,64,.07)}
-    .card h3{color:var(--navy);font-size:22px;margin:0 0 10px}
-    .card p{color:var(--muted);margin:0}
-    .platforms{background:white;border-top:1px solid rgba(7,22,64,.08)}
-    .platform-card{background:linear-gradient(180deg,#fff,#f7f9fd);position:relative;overflow:hidden}
-    .platform-card:before{content:'';position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,#1d6fff,var(--gold))}
-    .founder{background:radial-gradient(circle at 80% 20%,rgba(29,111,255,.08),transparent 34%),linear-gradient(180deg,#fff,#f7f9fd)}
-    .founder-grid{display:grid;grid-template-columns:370px 1fr 300px;gap:38px;align-items:center}
-    .portrait{border-radius:28px;overflow:hidden;box-shadow:var(--shadow);background:white;padding:10px}
-    .portrait img{width:100%;display:block;border-radius:20px}
-    .founder .title{color:#16469b;font-weight:900;font-style:italic;margin-bottom:22px}
-    .founder p{color:#384866;margin:0 0 16px}
-    .quote-card{background:white;border-radius:24px;padding:28px;border:1px solid rgba(7,22,64,.1);box-shadow:0 16px 45px rgba(7,22,64,.09)}
-    .quote-mark{color:var(--gold);font-size:48px;line-height:.8;font-weight:900}
-    .quote-card p{color:var(--navy);font-weight:750}
-    .signature{color:#16469b;font-family:Georgia,serif;font-style:italic}
-    .linkedin-icon{width:20px;height:20px;display:inline-block}
-    .metrics{color:white;background:linear-gradient(90deg,rgba(7,22,64,.96),rgba(8,31,83,.92)),url('tech-pattern.png') center/cover no-repeat;padding:76px 7vw}
-    .metrics h2,.metrics .kicker{text-align:center;color:white}
-    .metrics .kicker{color:var(--gold)}
-    .metric-grid{max-width:1060px;margin:34px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
-    .metric strong{font-size:46px;line-height:1;display:block}
-    .metric span{color:rgba(255,255,255,.78)}
-    .cta{background:white;padding:84px 7vw}
-    .cta-box{max-width:1180px;margin:0 auto;border-radius:28px;background:linear-gradient(90deg,rgba(246,248,252,.96),rgba(255,255,255,.86)),url('tech-pattern.png') center/cover no-repeat;padding:54px;display:flex;align-items:center;justify-content:space-between;gap:30px;border:1px solid rgba(7,22,64,.08);box-shadow:0 18px 50px rgba(7,22,64,.08)}
-    footer{background:var(--navy);color:rgba(255,255,255,.84);padding:42px 7vw}
-    .footer-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:220px 1fr 1fr;gap:38px;align-items:center}
-    footer img{width:150px;filter:brightness(0) invert(1)}
-    footer a{color:white;font-weight:750}
-    @media(max-width:980px){.nav{height:auto;padding:18px 6vw}.nav-links{display:none}.hero-inner,.split,.founder-grid,.grid,.metric-grid,.footer-inner{grid-template-columns:1fr}.hero-card{justify-self:start;margin-top:0}.services{grid-template-columns:1fr}.service{border-right:0;border-bottom:1px solid rgba(7,22,64,.1)}.cta-box{flex-direction:column;align-items:flex-start}.hero{min-height:auto}}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:#f3f6fb;color:var(--text);line-height:1.55}a{text-decoration:none;color:inherit}
+    .layout{display:grid;grid-template-columns:290px 1fr;min-height:100vh}
+    .sidebar{position:sticky;top:0;height:100vh;background:linear-gradient(180deg,rgba(7,22,64,.98),rgba(9,31,82,.98)),url('tech-pattern.png') center/cover;padding:34px 28px;color:white;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid rgba(255,255,255,.12)}
+    .logo{width:165px;background:white;border-radius:16px;padding:12px;box-shadow:0 14px 30px rgba(0,0,0,.22)}
+    .tag{margin-top:22px;color:rgba(255,255,255,.78);font-size:14px}.nav{margin-top:46px;display:grid;gap:10px}.nav a{padding:12px 14px;border-radius:12px;color:rgba(255,255,255,.82);font-weight:750;font-size:14px}.nav a:hover{background:rgba(255,255,255,.10);color:white}.side-bottom{font-size:13px;color:rgba(255,255,255,.72)}.side-bottom a{display:inline-flex;align-items:center;gap:8px;margin-top:12px;color:white;font-weight:850}.li{width:19px;height:19px;background:#0a66c2;border-radius:4px;display:inline-grid;place-items:center;font-weight:900;font-size:13px}.main{overflow:hidden}.hero{min-height:520px;color:white;background:linear-gradient(90deg,rgba(3,12,33,.98),rgba(4,18,48,.80) 48%,rgba(4,18,48,.15)),url('hero-bg.png') center right/cover no-repeat;padding:64px clamp(28px,6vw,80px);display:grid;align-items:center}.hero-content{max-width:980px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.13em;font-size:13px;font-weight:900;margin-bottom:16px}.hero h1{font-size:clamp(42px,5.4vw,78px);line-height:.98;margin:0 0 22px;font-weight:950;letter-spacing:-.05em}.hero h1 span{color:var(--gold)}.hero p{font-size:20px;max-width:760px;color:rgba(255,255,255,.88);margin:0 0 28px}.actions{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 21px;border-radius:11px;font-weight:850}.btn-primary{background:white;color:var(--navy)}.btn-dark{background:var(--navy);color:white}.btn-outline{border:1px solid rgba(255,255,255,.5);color:white}.wrap{max-width:1180px;margin:0 auto;padding:34px clamp(22px,5vw,70px)}.intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;margin-top:-74px;position:relative;z-index:5}.panel{background:white;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px}.panel h2{margin:0 0 14px;color:var(--navy);font-size:clamp(28px,3vw,42px);line-height:1.05;letter-spacing:-.035em}.lead{color:var(--muted);font-size:17px;margin:0}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.chip{background:#eef3fb;color:#123065;border:1px solid rgba(7,22,64,.08);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.stat{background:linear-gradient(180deg,#fff,#f8faff);border:1px solid var(--line);border-radius:18px;padding:22px}.stat strong{display:block;color:var(--navy);font-size:32px;line-height:1}.stat span{display:block;color:var(--muted);font-size:13px;margin-top:8px;font-weight:700}.section{padding:28px 0}.section-title{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}.kicker{color:#16469b;font-size:13px;font-weight:950;text-transform:uppercase;letter-spacing:.13em}.section-title h2{margin:6px 0 0;color:var(--navy);font-size:34px;line-height:1.05;letter-spacing:-.035em}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 12px 32px rgba(7,22,64,.07)}.card .icon{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,rgba(29,111,255,.12),rgba(246,181,46,.16));display:grid;place-items:center;font-size:23px;margin-bottom:14px}.card h3{margin:0 0 8px;color:var(--navy);font-size:20px;line-height:1.15}.card p{margin:0;color:var(--muted);font-size:15px}.stripe{background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:30px 0}.dual{display:grid;grid-template-columns:.92fr 1.08fr;gap:24px;align-items:stretch}.image-box{min-height:360px;background:linear-gradient(180deg,rgba(7,22,64,.1),rgba(7,22,64,.2)),url('city-bg.png') center/cover;border-radius:var(--radius);box-shadow:var(--shadow)}.list{display:grid;gap:12px;margin-top:18px}.list div{display:flex;gap:11px;color:#21365f;font-weight:700}.list div:before{content:'✓';width:23px;height:23px;flex:0 0 23px;border-radius:50%;background:var(--navy);color:white;display:grid;place-items:center;font-size:12px}.founder{display:grid;grid-template-columns:280px 1fr;gap:26px;align-items:center}.portrait{background:white;border-radius:24px;padding:9px;box-shadow:var(--shadow);border:1px solid var(--line)}.portrait img{width:100%;border-radius:18px;display:block}.bio h2{margin:0 0 8px;color:var(--navy);font-size:34px;line-height:1.05}.bio .title{color:#16469b;font-weight:900;font-style:italic;margin-bottom:16px}.bio p{color:#384866;margin:0 0 13px}.quote{margin-top:18px;background:#f8faff;border-left:5px solid var(--gold);padding:17px 20px;border-radius:14px;color:var(--navy);font-weight:800}.linkedin{display:inline-flex;align-items:center;gap:10px;margin-top:18px;background:#0a66c2;color:white;padding:12px 16px;border-radius:11px;font-weight:900}.linkedin svg{width:20px;height:20px}.cta{background:linear-gradient(90deg,rgba(7,22,64,.96),rgba(11,43,114,.88)),url('tech-pattern.png') center/cover;color:white;border-radius:28px;padding:36px;display:flex;align-items:center;justify-content:space-between;gap:24px}.cta h2{margin:0 0 8px;font-size:34px;line-height:1.05}.cta p{margin:0;color:rgba(255,255,255,.78)}footer{padding:26px clamp(22px,5vw,70px);color:#6a7388;font-size:14px}.mobile-logo{display:none}
+    @media(max-width:1000px){.layout{grid-template-columns:1fr}.sidebar{display:none}.mobile-logo{display:block;width:150px;margin-bottom:25px;background:white;border-radius:14px;padding:10px}.hero{min-height:auto;padding-top:42px}.intro-grid,.dual,.founder{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}.cta{flex-direction:column;align-items:flex-start}}
+    @media(max-width:650px){.cards,.stats{grid-template-columns:1fr}.wrap{padding-top:24px}.hero h1{font-size:42px}.hero p{font-size:17px}.section-title{display:block}.cta h2{font-size:28px}}
   </style>
 </head>
-
 <body>
-<header class="nav">
-  <a href="#top"><img src="logo.png" alt="Pandian Global logo"></a>
-  <nav class="nav-links">
-    <a href="#about">About</a>
-    <a href="#services">What We Do</a>
-    <a href="#platforms">ERP Consulting</a>
-    <a href="#founder">Founder</a>
-    <a href="#results">Results</a>
-    <a class="btn btn-primary" href="mailto:info@pandianglobal.com">Let's Connect</a>
-  </nav>
-</header>
-
-<main id="top">
-  <section class="hero">
-    <div class="hero-inner">
+  <div class="layout">
+    <aside class="sidebar">
       <div>
-        <div class="eyebrow">Empowering businesses. Elevating futures.</div>
-        <h1>Technology<span>.</span><br>Efficiency<span>.</span><br>Transformation<span>.</span></h1>
-        <p>Pandian Global helps organizations modernize systems, enhance operations, deploy AI-powered efficiencies, and turn complex business challenges into clear, measurable progress.</p>
-        <div class="hero-actions">
-          <a class="btn btn-blue" href="#services">Explore Solutions →</a>
-          <a class="btn btn-ghost" href="mailto:info@pandianglobal.com">Start the Conversation →</a>
+        <img class="logo" src="logo.png" alt="Pandian Global logo" />
+        <div class="tag">Executive technology, systems, ERP, AI, and nonprofit management advisory.</div>
+        <nav class="nav">
+          <a href="#about">About</a><a href="#services">Services</a><a href="#erp">ERP Consulting</a><a href="#founder">Founder</a><a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="side-bottom">
+        <div>Technology. Efficiency. Transformation.</div>
+        <a href="https://www.linkedin.com/company/9411024/" target="_blank" rel="noopener"><span class="li">in</span> Pandian Global</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="hero">
+        <div class="hero-content">
+          <img class="mobile-logo" src="logo.png" alt="Pandian Global logo" />
+          <div class="eyebrow">Executive advisory for smarter organizations</div>
+          <h1>Technology, Systems & AI for Better Business Decisions<span>.</span></h1>
+          <p>Pandian Global helps businesses and nonprofits modernize systems, improve financial and operational visibility, integrate ERP platforms, and deploy practical AI-enabled efficiencies.</p>
+          <div class="actions"><a class="btn btn-primary" href="mailto:info@pandianglobal.com">Start the Conversation</a><a class="btn btn-outline" href="#services">View Services</a></div>
         </div>
-      </div>
-      <aside class="hero-card">
-        <strong>Smarter systems. Better decisions.</strong>
-        <span>Strategy, implementation, and practical technology improvements for businesses and nonprofit organizations.</span>
-      </aside>
-    </div>
-  </section>
+      </section>
 
-  <div class="services-wrap" id="services">
-    <div class="services">
-      <article class="service"><div class="icon">⚙️</div><h3>Technology Improvements</h3><p>Modernize workflows, infrastructure, and digital tools.</p></article>
-      <article class="service"><div class="icon">📈</div><h3>System Enhancements</h3><p>Upgrade, integrate, and optimize systems for performance.</p></article>
-      <article class="service"><div class="icon">🔗</div><h3>ERP & Accounting Integrations</h3><p>NetSuite, Sage Intacct, and QuickBooks consulting and integration support.</p></article>
-      <article class="service"><div class="icon">🤖</div><h3>AI-Powered Efficiencies</h3><p>Use AI to automate, analyze, and accelerate operations.</p></article>
-      <article class="service"><div class="icon">🏛️</div><h3>Nonprofit Management</h3><p>Executive, finance, operations, and governance support for mission-driven organizations.</p></article>
-    </div>
+      <div class="wrap" id="about">
+        <div class="intro-grid">
+          <section class="panel">
+            <div class="kicker">Pandian Global</div>
+            <h2>Compact, practical consulting for complex operational problems.</h2>
+            <p class="lead">We bring together executive finance leadership, system implementation experience, ERP advisory, nonprofit management expertise, and AI-driven process improvement to help organizations move from complexity to clarity.</p>
+            <div class="chips"><span class="chip">ERP Integrations</span><span class="chip">Finance Systems</span><span class="chip">AI Efficiency</span><span class="chip">Nonprofit Management</span><span class="chip">Executive Advisory</span></div>
+          </section>
+          <section class="panel stats">
+            <div class="stat"><strong>25+</strong><span>Years executive and finance management experience</span></div>
+            <div class="stat"><strong>ERP</strong><span>NetSuite, Sage Intacct, QuickBooks</span></div>
+            <div class="stat"><strong>AI</strong><span>Practical automation and workflow efficiency</span></div>
+            <div class="stat"><strong>Global</strong><span>Experience across the U.S. and Asia</span></div>
+          </section>
+        </div>
+
+        <section class="section" id="services">
+          <div class="section-title"><div><div class="kicker">What We Do</div><h2>Focused services, clear outcomes.</h2></div></div>
+          <div class="cards">
+            <article class="card"><div class="icon">⚙️</div><h3>Technology Improvements</h3><p>Modernize workflows, reduce manual processes, and improve how teams use technology.</p></article>
+            <article class="card"><div class="icon">🔗</div><h3>ERP & Accounting Integrations</h3><p>Connect finance systems, reporting structures, approvals, payments, and operational data.</p></article>
+            <article class="card"><div class="icon">🤖</div><h3>AI-Powered Efficiencies</h3><p>Deploy practical AI and automation to speed up work, improve visibility, and reduce friction.</p></article>
+            <article class="card"><div class="icon">📊</div><h3>Finance & Operations Strategy</h3><p>Strengthen reporting, controls, budgeting, process discipline, and executive decision-making.</p></article>
+            <article class="card"><div class="icon">🏛️</div><h3>Nonprofit Management</h3><p>Support leadership, governance, compliance-minded operations, budgeting, and infrastructure.</p></article>
+            <article class="card"><div class="icon">🧭</div><h3>Implementation Support</h3><p>Translate business needs into technical execution so improvements work in real operations.</p></article>
+          </div>
+        </section>
+      </div>
+
+      <section class="stripe" id="erp"><div class="wrap dual">
+        <div class="image-box"></div>
+        <div class="panel">
+          <div class="kicker">ERP & Accounting Consulting</div>
+          <h2>Integration support for the systems your organization depends on.</h2>
+          <p class="lead">Pandian Global helps organizations improve how financial and operational systems connect, report, and support decision-making.</p>
+          <div class="list"><div>NetSuite optimization, segmentation, dashboards, reporting, workflows, and integrations</div><div>Sage Intacct implementation support, reporting design, and process improvement</div><div>QuickBooks setup, cleanup, integration planning, and transition support</div><div>Finance system roadmaps that align technology with management needs</div></div>
+        </div>
+      </div></section>
+
+      <div class="wrap" id="founder">
+        <section class="section founder">
+          <div class="portrait"><img src="fredrick-headshot.jpg" alt="Fredrick Vasanth Pandian"></div>
+          <div class="bio">
+            <div class="kicker">Founder</div>
+            <h2>Fredrick Vasanth Pandian</h2>
+            <div class="title">Executive Advisor | Finance, Operations, Systems & Organizational Transformation</div>
+            <p>Fredrick Vasanth Pandian is the Founder of Pandian Global and a senior executive leader with more than 25 years of experience in finance, operations, technology systems, and organizational management across the United States and Asia.</p>
+            <p>He has led enterprise-wide financial strategy, operational transformation, ERP implementations, governance modernization, and infrastructure improvements for organizations navigating growth, complexity, and change.</p>
+            <p>His expertise includes NetSuite optimization, ERP integrations, financial systems transformation, operational efficiency design, AI-enabled process improvement, nonprofit management, board governance support, and executive leadership strategy.</p>
+            <div class="quote">Strong organizations are built through clear systems, disciplined execution, and technology that serves people and mission.</div>
+            <a class="linkedin" href="https://www.linkedin.com/company/9411024/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.1 20.45H3.54V9H7.1v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>Pandian Global on LinkedIn</a>
+          </div>
+        </section>
+
+        <section class="cta" id="contact">
+          <div><h2>Let’s build a smarter, more efficient organization.</h2><p>For ERP, AI, finance systems, nonprofit management, or operational transformation consulting, contact Pandian Global.</p></div>
+          <a class="btn btn-primary" href="mailto:info@pandianglobal.com">info@pandianglobal.com</a>
+        </section>
+      </div>
+      <footer>© 2025 Pandian Global. All rights reserved.</footer>
+    </main>
   </div>
-
-  <section id="about">
-    <div class="section-inner split">
-      <div>
-        <div class="kicker">About Pandian Global</div>
-        <h2>We turn technology into business value.</h2>
-        <p class="lead">Pandian Global partners with businesses and nonprofit organizations to design smarter systems, improve financial and operational visibility, and implement practical technology solutions that help teams work better.</p>
-        <ul class="check-list">
-          <li>Holistic approach to technology, operations, finance, and management</li>
-          <li>ERP and accounting system consulting for NetSuite, Sage Intacct, and QuickBooks</li>
-          <li>Nonprofit management, executive leadership, financial oversight, and operational strategy</li>
-          <li>AI and automation focused on practical efficiency</li>
-          <li>Commitment to clarity, quality, and long-term impact</li>
-        </ul>
-      </div>
-      <div class="image-card"></div>
-    </div>
-  </section>
-
-  <section class="solutions">
-    <div class="section-inner">
-      <div class="kicker">How We Help</div>
-      <h2>Practical consulting for modern business transformation.</h2>
-      <div class="grid">
-        <article class="card"><h3>Systems Review & Roadmaps</h3><p>Assess current tools, identify gaps, and create a clear improvement roadmap.</p></article>
-        <article class="card"><h3>ERP & Accounting Integrations</h3><p>Support NetSuite, Sage Intacct, and QuickBooks integrations, reporting improvements, process redesign, and system optimization.</p></article>
-        <article class="card"><h3>Automation & AI Deployment</h3><p>Implement practical AI workflows that reduce manual work and improve speed.</p></article>
-        <article class="card"><h3>Operations & Finance Strategy</h3><p>Strengthen reporting, processes, controls, and decision-making discipline.</p></article>
-        <article class="card"><h3>Nonprofit Management Expertise</h3><p>Support nonprofit leadership, budgeting, financial management, governance, and operational infrastructure.</p></article>
-        <article class="card"><h3>Implementation Support</h3><p>Bridge business needs and technical execution so system improvements actually work in practice.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="platforms" id="platforms">
-    <div class="section-inner">
-      <div class="kicker">ERP & Accounting Platform Consulting</div>
-      <h2>Integration support for the systems your organization depends on.</h2>
-      <p class="lead">Pandian Global helps organizations improve how financial and operational systems connect, report, and support decision-making.</p>
-      <div class="grid">
-        <article class="card platform-card"><h3>NetSuite</h3><p>ERP optimization, segment structure, reporting workflows, integrations, dashboards, and finance process improvements.</p></article>
-        <article class="card platform-card"><h3>Sage Intacct</h3><p>Accounting system consulting, implementation support, reporting design, process improvement, and operational alignment.</p></article>
-        <article class="card platform-card"><h3>QuickBooks</h3><p>Setup, cleanup, integration planning, reporting improvements, and transition support for growing organizations.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="founder" id="founder">
-    <div class="section-inner founder-grid">
-      <div class="portrait"><img src="fredrick-headshot.jpg" alt="Fredrick Vasanth Pandian"></div>
-
-      <div>
-        <div class="kicker">Founder</div>
-        <h2>Fredrick Vasanth Pandian</h2>
-        <div class="title">Executive Advisor | Finance, Operations, Systems & Organizational Transformation</div>
-
-        <p>Fredrick Vasanth Pandian is the Founder of Pandian Global and a senior executive leader with more than 25 years of experience in finance, operations, technology systems, and organizational management across the United States and Asia.</p>
-
-        <p>He has led enterprise-wide financial strategy, operational transformation, ERP implementations, governance modernization, and infrastructure improvements for organizations navigating growth, complexity, and change.</p>
-
-        <p>His expertise includes NetSuite optimization, ERP integrations, financial systems transformation, operational efficiency design, AI-enabled process improvement, nonprofit management, board governance support, and executive leadership strategy.</p>
-
-        <p>Through Pandian Global, Fredrick advises organizations seeking practical, scalable solutions that strengthen operations, improve decision-making, and build long-term organizational resilience.</p>
-      </div>
-
-      <aside class="quote-card">
-        <div class="quote-mark">“</div>
-        <p>Strong organizations are built through clear systems, disciplined execution, and technology that serves people and mission.</p>
-        <div class="signature">— Fredrick Vasanth Pandian</div>
-        <br>
-        <a class="btn btn-primary" href="https://www.linkedin.com/company/9411024/" target="_blank" rel="noopener">
-          <svg class="linkedin-icon" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.1 20.45H3.54V9H7.1v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/>
-          </svg>
-          Pandian Global on LinkedIn
-        </a>
-      </aside>
-    </div>
-  </section>
-
-  <section class="metrics" id="results">
-    <div class="section-inner">
-      <div class="kicker">Why Partner With Us</div>
-      <h2>Results that matter</h2>
-      <div class="metric-grid">
-        <div class="metric"><strong>25+</strong><span>Years executive and finance management experience</span></div>
-        <div class="metric"><strong>ERP</strong><span>NetSuite, Sage Intacct, and QuickBooks consulting</span></div>
-        <div class="metric"><strong>AI</strong><span>Automation and efficiency improvement</span></div>
-        <div class="metric"><strong>Global</strong><span>Experience across the U.S. and Asia</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <div class="cta-box">
-      <div>
-        <h2>Let’s build a smarter, more efficient future together.</h2>
-        <p>From strategy to execution, Pandian Global helps organizations harness technology, AI, and integrated systems to achieve better business outcomes.</p>
-      </div>
-      <a class="btn btn-primary" href="mailto:info@pandianglobal.com">Start the Conversation →</a>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="footer-inner">
-    <img src="logo.png" alt="Pandian Global logo">
-    <div>Empowering businesses and nonprofits with technology, efficiency, integrated systems, and strategic excellence.</div>
-    <div>
-      <a href="mailto:info@pandianglobal.com">info@pandianglobal.com</a><br>
-      <a href="https://www.linkedin.com/company/9411024/" target="_blank" rel="noopener">Pandian Global on LinkedIn</a><br>
-      © 2025 Pandian Global. All rights reserved.
-    </div>
-  </div>
-</footer>
 </body>
 </html>
