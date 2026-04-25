@@ -1,29 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pandian Global | Systems. Operations. Results.</title>
-<meta name="description" content="Pandian Global helps small businesses, growing companies, nonprofits, and mission-driven organizations streamline operations, modernize systems, implement AI efficiencies, and scale with confidence.">
-<style>
-:root{--navy:#16004f;--gold:#caa24f;--paper:#fbfaf7}
-body{margin:0;font-family:Arial,sans-serif;background:var(--paper);color:#202020}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:40px;background:linear-gradient(rgba(12,8,48,.94),rgba(12,8,48,.82)),url('city-bg.png') center/cover;color:white}
-.logo{width:220px;background:white;padding:10px;border-radius:14px;margin-bottom:30px}
-h1{font-size:clamp(48px,7vw,82px);max-width:900px;line-height:.95;margin:0 0 20px}
-p{font-size:22px;max-width:760px;color:rgba(255,255,255,.85);line-height:1.5}
-.btn{display:inline-block;margin-top:30px;background:var(--gold);color:white;padding:18px 34px;border-radius:999px;font-weight:bold;text-decoration:none}
-.btn:hover{opacity:.9}
-.platforms{margin-top:25px;font-size:14px;color:rgba(255,255,255,.75)}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pandian Global | Systems. Operations. Results.</title>
+  <meta name="description" content="Pandian Global helps small businesses, growing companies, nonprofits, and mission-driven organizations streamline operations, modernize systems, implement AI efficiencies, and scale with confidence." />
+  <style>
+    :root {
+      --navy: #16004f;
+      --deep: #0c0830;
+      --gold: #caa24f;
+      --paper: #fbfaf7;
+      --ink: #202020;
+      --muted: #667085;
+      --line: rgba(0,0,0,.10);
+      --shadow: 0 20px 55px rgba(0,0,0,.11);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.5; }
+    a { color: inherit; text-decoration: none; }
+    .top {
+      height: 86px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw; background: rgba(12,8,48,.96); position: sticky; top: 0; z-index: 20;
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+    }
+    .logo { width: 170px; background: #fff; border-radius: 12px; padding: 8px; display: block; }
+    .nav { display: flex; gap: 26px; align-items: center; color: white; font-size: 14px; font-weight: 800; }
+    .nav a { opacity: .88; }
+    .nav a:hover { opacity: 1; color: var(--gold); }
+    .nav .talk { background: var(--gold); color: white; opacity: 1; padding: 12px 18px; border-radius: 999px; }
+
+    .hero {
+      min-height: calc(100vh - 86px); color: white; padding: 74px 5vw;
+      display: grid; grid-template-columns: 1.15fr .85fr; gap: 42px; align-items: center;
+      background: linear-gradient(90deg, rgba(12,8,48,.97), rgba(12,8,48,.83), rgba(12,8,48,.55)), url('city-bg.png') center/cover no-repeat;
+    }
+    .eyebrow { color: var(--gold); font-weight: 900; text-transform: uppercase; letter-spacing: .15em; font-size: 12px; margin-bottom: 18px; }
+    h1 { font-size: clamp(48px, 6vw, 82px); line-height: .96; letter-spacing: -.055em; margin: 0 0 24px; }
+    .hero p { font-size: 19px; color: rgba(255,255,255,.82); max-width: 720px; margin: 0 0 18px; }
+    .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 22px; border-radius: 999px; font-weight: 900; transition: .22s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: var(--gold); color: white; }
+    .btn-outline { border: 1px solid rgba(255,255,255,.42); color: white; }
+    .platforms-inline { margin-top: 30px; color: rgba(255,255,255,.78); font-size: 14px; line-height: 1.8; }
+    .platforms-inline strong { color: var(--gold); }
+
+    .founder-card { background: white; color: var(--ink); border-radius: 22px; padding: 24px; box-shadow: var(--shadow); max-width: 520px; justify-self: end; }
+    .founder-row { display: grid; grid-template-columns: 82px 1fr 34px; gap: 18px; align-items: center; }
+    .founder-row img { width: 82px; height: 82px; border-radius: 50%; object-fit: cover; object-position: center 18%; }
+    .founder-row h3 { margin: 0 0 4px; font-size: 20px; color: var(--deep); }
+    .founder-row p { margin: 0; color: var(--muted); font-size: 13.5px; }
+    .linkedin { width: 34px; height: 34px; border-radius: 50%; background: #0a66c2; color: white; display: grid; place-items: center; font-weight: 900; }
+
+    .section { max-width: 1250px; margin: 0 auto; padding: 76px 5vw; }
+    .section h2 { text-align: center; font-size: 42px; line-height: 1.05; color: var(--deep); margin: 0 0 42px; letter-spacing: -.04em; }
+    .services { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+    .service { background: white; border: 1px solid var(--line); border-radius: 20px; padding: 28px 20px; text-align: center; box-shadow: 0 14px 35px rgba(0,0,0,.08); transition: .25s ease; }
+    .service:hover { transform: translateY(-6px); box-shadow: 0 24px 55px rgba(0,0,0,.12); }
+    .icon { font-size: 31px; color: var(--gold); margin-bottom: 14px; }
+    .service h3 { font-size: 18px; margin: 0 0 10px; color: var(--deep); }
+    .service p { font-size: 14px; color: var(--muted); margin: 0; }
+
+    .stats { background: linear-gradient(90deg, rgba(12,8,48,.97), rgba(22,0,79,.93)), url('tech-pattern.png') center/cover no-repeat; color: white; padding: 58px 5vw; }
+    .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+    .stat { border-left: 1px solid rgba(255,255,255,.18); padding-left: 24px; }
+    .stat strong { font-size: 44px; color: var(--gold); display: block; line-height: 1; }
+    .stat span { display: block; margin-top: 10px; color: rgba(255,255,255,.82); }
+
+    .approach { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    .step { background: white; border: 1px solid var(--line); border-radius: 22px; padding: 30px; box-shadow: 0 14px 35px rgba(0,0,0,.07); }
+    .step-num { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: #f1e6cc; color: var(--deep); font-weight: 900; margin: 0 auto 16px; }
+
+    .cta { background: linear-gradient(90deg, rgba(12,8,48,.97), rgba(12,8,48,.9)), url('tech-pattern.png') center/cover no-repeat; color: white; text-align: center; padding: 74px 5vw; }
+    .cta h2 { font-size: 42px; line-height: 1.08; margin: 0 0 14px; }
+    .cta p { color: rgba(255,255,255,.8); font-size: 18px; margin: 0 0 24px; }
+    footer { text-align: center; background: white; color: #777; padding: 28px 5vw; font-size: 13px; }
+
+    @media (max-width: 1050px) {
+      .hero { grid-template-columns: 1fr; }
+      .founder-card { justify-self: start; }
+      .services { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .approach { grid-template-columns: 1fr; }
+      .nav { display: none; }
+    }
+    @media (max-width: 650px) {
+      .top { justify-content: center; }
+      .logo { width: 160px; }
+      .hero { padding: 54px 24px; }
+      h1 { font-size: 42px; }
+      .services, .stats-grid { grid-template-columns: 1fr; }
+      .founder-row { grid-template-columns: 70px 1fr; }
+      .linkedin { display: none; }
+    }
+  </style>
 </head>
 <body>
-<section class="hero">
-<img class="logo" src="logo.png" alt="Pandian Global logo">
-<h1>Better Systems.<br>Stronger Businesses.</h1>
-<p>Pandian Global helps small businesses, growing companies, nonprofits, and mission-driven organizations modernize operations, streamline systems, implement AI efficiencies, and scale with confidence.</p>
-<a class="btn" href="mailto:info@pandianglobal.com">Start the Conversation</a>
-<div class="platforms">NetSuite • Sage Intacct • QuickBooks • Salesforce • Microsoft 365 • TriNet • ADP • Neon</div>
-</section>
+  <header class="top">
+    <img class="logo" src="logo.png" alt="Pandian Global logo">
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#approach">How We Work</a>
+      <a href="#contact">Contact</a>
+      <a class="talk" href="mailto:info@pandianglobal.com">Let's Talk</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Systems. Operations. Results.</div>
+        <h1>Better Systems.<br>Stronger Businesses.</h1>
+        <p>Pandian Global helps small businesses, growing companies, nonprofits, and mission-driven organizations streamline operations, modernize systems, implement AI efficiencies, and scale with confidence.</p>
+        <p>We bring practical systems thinking, finance discipline, and implementation support to organizations that need clearer workflows, stronger reporting, and better decisions.</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="mailto:info@pandianglobal.com">How We Can Help</a>
+          <a class="btn btn-outline" href="#services">Explore Services</a>
+        </div>
+        <div class="platforms-inline"><strong>Platforms supported:</strong> NetSuite · Sage Intacct · QuickBooks · Neon · Salesforce · Microsoft 365 · TriNet · ADP</div>
+      </div>
+      <aside class="founder-card">
+        <div class="founder-row">
+          <img src="fredrick-headshot.jpg" alt="Fredrick Vasanth Pandian">
+          <div>
+            <h3>Fredrick Vasanth Pandian</h3>
+            <p><strong>Founder & Principal Consultant</strong></p>
+            <p>25+ years in finance, operations, systems transformation, nonprofit management, and global organizational leadership.</p>
+          </div>
+          <a class="linkedin" href="https://www.linkedin.com/company/9411024/" target="_blank" rel="noopener">in</a>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="services">
+      <h2>How We Help</h2>
+      <div class="services">
+        <article class="service"><div class="icon">⚙</div><h3>Systems & Technology</h3><p>Optimize ERP, finance, HR, CRM, and productivity systems for better accuracy and efficiency.</p></article>
+        <article class="service"><div class="icon">↔</div><h3>Operations Excellence</h3><p>Design better workflows, approvals, reporting routines, and processes that reduce friction.</p></article>
+        <article class="service"><div class="icon">▥</div><h3>Reporting & Insights</h3><p>Turn data into dashboards, reports, and decision tools leaders can actually use.</p></article>
+        <article class="service"><div class="icon">✦</div><h3>Automation & AI</h3><p>Leverage automation and AI to save time, reduce costs, and empower your team.</p></article>
+        <article class="service"><div class="icon">◎</div><h3>Growth & Scaling</h3><p>Build the operational foundation small businesses and nonprofits need to scale with confidence.</p></article>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stats-grid">
+        <div class="stat"><strong>25+</strong><span>Years of finance, operations, and systems leadership</span></div>
+        <div class="stat"><strong>4</strong><span>Global perspective across U.S., Thailand, India, and Hong Kong</span></div>
+        <div class="stat"><strong>ERP</strong><span>Experience across finance and operating platforms</span></div>
+        <div class="stat"><strong>One</strong><span>Mission: helping organizations operate smarter</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="approach">
+      <h2>Our Approach</h2>
+      <div class="approach">
+        <article class="step"><div class="step-num">1</div><h3>Assess</h3><p>We listen, analyze, and identify opportunities to improve your operations and systems.</p></article>
+        <article class="step"><div class="step-num">2</div><h3>Design</h3><p>We create a clear plan with the right tools, processes, and structure to achieve your goals.</p></article>
+        <article class="step"><div class="step-num">3</div><h3>Implement</h3><p>We partner with you to execute the plan, drive adoption, and deliver measurable results.</p></article>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <h2>Let’s build a business that scales efficiently.</h2>
+      <p>Whether you’re a small business, nonprofit, or growing organization, we’ll help you build systems and processes for sustainable growth.</p>
+      <a class="btn btn-gold" href="mailto:info@pandianglobal.com">Start the Conversation</a>
+    </section>
+  </main>
+
+  <footer>© 2025 Pandian Global | info@pandianglobal.com</footer>
 </body>
 </html>
