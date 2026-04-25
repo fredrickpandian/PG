@@ -9,31 +9,38 @@
   --shadow: 0 24px 70px rgba(8, 5, 31, .14);
 }
 
-/* existing file unchanged except logo sizing */
+/* transparent logo had too much empty canvas around it */
+/* increasing actual visual footprint */
+
+.brand {
+  overflow: visible;
+}
 
 .brand img {
-  width: 300px;
-  max-height: 92px;
+  width: 420px;
+  height: 74px;
+  max-height: none;
   object-fit: contain;
+  object-position: left center;
 }
 
 @media (max-width: 1050px) {
   .brand img {
-    width: 250px;
-    max-height: 82px;
+    width: 320px;
+    height: 64px;
   }
 }
 
 @media (max-width: 650px) {
   .brand img {
-    width: 210px;
-    max-height: 68px;
+    width: 250px;
+    height: 52px;
   }
 }
 
 @media (max-width: 380px) {
   .brand img {
-    width: 185px;
-    max-height: 60px;
+    width: 220px;
+    height: 46px;
   }
 }
